@@ -25,7 +25,7 @@ pipeline {
                 stage('Unit') {
                     steps {
                         sh '''
-                            set PYTHONPATH=$WORKSPACE
+                            PYTHONPATH=$WORKSPACE
 			    echo "pytest --junitxml=result-unit.xml test\\unit"
                             pytest --junitxml=result-unit.xml $WOKSPACE\\test\\unit
                         '''
