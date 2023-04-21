@@ -37,10 +37,9 @@ pipeline {
 			    PYTHONPATH=$WORKSPACE
                             FLASK_APP="app/api.py"
                             FLASK_ENV="development"
-			    nohup Flask run
+			    nohup flask run
  			    nohup java -jar $WORKSPACE/wiremock/wiremock-jre8-standalone-2.28.0.jar --port 9090 --root-dir $WORKSPACE/wiremock
-                            ping  -n 21 127.0.0.1 > /dev/null
-                            PYTHONPATH=$WORKSPACE
+                            ping  -n 20 127.0.0.1 > /dev/null
 			    pytest --junitxml=result-rest.xml test/rest			    
                         '''
                     }    
