@@ -34,7 +34,7 @@ pipeline {
                 stage('Service') {
                     steps {
                         sh '''
-			    echo $PYTHONPATH
+			    PYTHONPATH=$WORKSPACE
                             FLASK_APP="app/api.py"
                             FLASK_ENV="development"
 			    nohup Flask run
