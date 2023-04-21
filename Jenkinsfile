@@ -26,6 +26,7 @@ pipeline {
                     steps {
                         sh '''
                             set PYTHONPATH=$WORKSPACE
+			    echo "pytest --junitxml=result-unit.xml test\\unit"
                             pytest --junitxml=result-unit.xml test\\unit
                         '''
                     }
