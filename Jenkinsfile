@@ -33,7 +33,7 @@ pipeline {
                 stage('Service') {
                     steps {
                         sh '''
-                            FLASK_APP="app\api.py"
+                            FLASK_APP="app\\api.py"
                             FLASK_ENV="development"
 			    Flask run
  			    java -jar $WORKSPACE\wiremock\wiremock-jre8-standalone-2.28.0.jar --port 9090 --root-dir $WORKSPACE\wiremock &
