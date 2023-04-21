@@ -26,6 +26,7 @@ pipeline {
                     steps {
                         sh '''
                             PYTHONPATH=$WORKSPACE
+			    echo $PYTHONPATH
 			    pytest --junitxml=result-unit.xml test/unit
                         '''
                     }
@@ -33,6 +34,7 @@ pipeline {
                 stage('Service') {
                     steps {
                         sh '''
+			    echo $PYTHONPATH
                             FLASK_APP="app/api.py"
                             FLASK_ENV="development"
 			    nohup Flask run
