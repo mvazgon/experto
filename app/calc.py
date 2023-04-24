@@ -29,9 +29,9 @@ class Calculator:
         self.check_types(x, y)
         return x ** y
     
-    def sqrt(self, x):
-        self.check_types(x)
-        return x**1/2
+    def sqrt(self, x,y):
+        self.check_types(x,y)
+        return x**1/y
 
     def check_types(self, x, y):
         if not isinstance(x, (int, float)) or                                                not isinstance(y, (int, float)):
