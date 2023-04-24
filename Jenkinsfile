@@ -27,7 +27,7 @@ pipeline {
                         sh '''
                             PYTHONPATH=$WORKSPACE
 			    echo $PYTHONPATH
-			    pytest --junitxml=result-unit.xml test/unit
+			    python3 -m pytest --junitxml=result-unit.xml test/unit
                         '''
                     }
                 }
@@ -40,7 +40,7 @@ pipeline {
 			    nohup flask run
  			    nohup java -jar $WORKSPACE/wiremock/wiremock-jre8-standalone-2.28.0.jar --port 9090 --root-dir $WORKSPACE/wiremock
                             ping  -n 20 127.0.0.1 > /dev/null
-			    pytest --junitxml=result-rest.xml test/rest			    
+			    python3 -m pytest --junitxml=result-rest.xml test/rest			    
                         '''
                     }    
                 }
