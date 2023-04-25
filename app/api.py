@@ -25,7 +25,7 @@ def add(op_1, op_2):
 
 
 @api_application.route("/calc/substract/<op_1>/<op_2>", methods=["GET"])
-def substract(op_1, op_2):m
+def substract(op_1, op_2):
     try:
         num_1, num_2 = util.convert_to_number(op_1), util.convert_to_number(op_2)
         return ("{}".format(CALCULATOR.substract(num_1, num_2)), http.client.OK, HEADERS)
