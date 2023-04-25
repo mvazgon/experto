@@ -2,6 +2,16 @@ pipeline {
     agent any
 
      stages {
+	     
+	stage('Clean Workspace'){
+		steps{
+			//limpiamos los directorios de trabajo, que se descarge la info
+			sh '''
+				rm -fr $WORKSPACE/*
+				ls -lrth $WORKSPACE/
+			'''
+		}
+	     }
         stage('Get Code') {
             steps {
                 // Obtener código del repo
