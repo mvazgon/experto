@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "GET",
-    "url": "/calc/sqrt/64/2"
+    "url": "/calc/sqrt/64"
   },
   "response": {
     "status": 200,
